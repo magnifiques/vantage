@@ -8,7 +8,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { useEffect } from "react";
-import { TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, Text, Appearance } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
 const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
@@ -160,13 +160,15 @@ const InitialLayout = () => {
 };
 
 const RootLayoutNav = () => {
+  const colorScheme = Appearance.getColorScheme();
+  console.log(colorScheme);
   return (
     <ClerkProvider
       publishableKey={CLERK_PUBLISHABLE_KEY!}
       tokenCache={tokenCache}
     >
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <StatusBar style="light" />
+        <StatusBar style="dark" />
         <InitialLayout />
       </GestureHandlerRootView>
     </ClerkProvider>
