@@ -11,11 +11,11 @@ type RoundButtonProps = {
 
 const RoundButton = ({ title, icon, onPress }: RoundButtonProps) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
-      <View>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
+      <View style={styles.circle}>
         <Ionicons name={icon} size={30} color={Colors.dark} />
       </View>
-      <Text>{title}</Text>
+      <Text style={styles.label}>{title}</Text>
     </TouchableOpacity>
   );
 };

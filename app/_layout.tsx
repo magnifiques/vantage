@@ -160,8 +160,6 @@ const InitialLayout = () => {
 };
 
 const RootLayoutNav = () => {
-  const colorScheme = Appearance.getColorScheme();
-  console.log(colorScheme);
   return (
     <ClerkProvider
       publishableKey={CLERK_PUBLISHABLE_KEY!}

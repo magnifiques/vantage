@@ -5,11 +5,14 @@ import RoundButton from "@/components/RoundButton";
 import { useBalanceStore } from "@/store/balanceStore";
 import { defaultStyles } from "@/constants/Styles";
 import { Ionicons } from "@expo/vector-icons";
+import Widget from "@/components/Widget/Widget";
+import { useHeaderHeight } from "@react-navigation/elements";
 
 const Home = () => {
   const { transactions, balance, runTransaction, clearTransaction } =
     useBalanceStore();
 
+  const headerHeight = useHeaderHeight();
   const onAddMoney = () => {
     runTransaction({
       id: Math.random().toString(),
@@ -20,7 +23,10 @@ const Home = () => {
   };
 
   return (
-    <ScrollView style={{ backgroundColor: Colors.background }}>
+    <ScrollView
+      style={{ backgroundColor: Colors.background }}
+      contentContainerStyle={{ paddingTop: headerHeight }}
+    >
       <View style={styles.account}>
         <View style={styles.row}>
           <Text style={styles.balance}>{balance()}</Text>
@@ -94,6 +100,9 @@ const Home = () => {
           );
         })}
       </View>
+
+      <Text style={defaultStyles.sectionHeader}>Widgets</Text>
+      <Widget />
     </ScrollView>
   );
 };
