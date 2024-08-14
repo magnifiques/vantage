@@ -49,7 +49,7 @@ const data = [
     tvl_ratio: null,
     last_updated: "2024-03-05T09:45:00.000Z",
     quote: {
-      EUR: {
+      USD: {
         price: 61172.17695743709,
         volume_24h: 69278106372.44798,
         volume_change_24h: 80.6251,
@@ -117,7 +117,7 @@ const data = [
     tvl_ratio: null,
     last_updated: "2024-03-05T09:45:00.000Z",
     quote: {
-      EUR: {
+      USD: {
         price: 3397.272518256182,
         volume_24h: 28951505589.23718,
         volume_change_24h: 81.3652,
@@ -172,7 +172,7 @@ const data = [
     tvl_ratio: null,
     last_updated: "2024-03-05T09:44:00.000Z",
     quote: {
-      EUR: {
+      USD: {
         price: 0.9218759200172967,
         volume_24h: 127574629087.67787,
         volume_change_24h: 63.8698,
@@ -221,7 +221,7 @@ const data = [
     tvl_ratio: null,
     last_updated: "2024-03-05T09:44:00.000Z",
     quote: {
-      EUR: {
+      USD: {
         price: 385.90384494527785,
         volume_24h: 2341285560.455857,
         volume_change_24h: 39.8193,
@@ -271,7 +271,7 @@ const data = [
     tvl_ratio: null,
     last_updated: "2024-03-05T09:45:00.000Z",
     quote: {
-      EUR: {
+      USD: {
         price: 119.63987139843265,
         volume_24h: 4498107313.186403,
         volume_change_24h: 63.4076,
