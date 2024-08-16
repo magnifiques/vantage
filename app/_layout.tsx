@@ -14,6 +14,7 @@ import "react-native-reanimated";
 const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
 import * as SecureStore from "expo-secure-store";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { UserInActivityProvider } from "@/context/UserInActivity";
 
 const queryClient = new QueryClient();
 
@@ -180,6 +181,11 @@ const InitialLayout = () => {
           ),
         }}
       />
+
+      <Stack.Screen
+        name="authenticated/(modals)/lock"
+        options={{ headerShown: false, animation: "none" }}
+      />
     </Stack>
   );
 };
@@ -191,10 +197,12 @@ const RootLayoutNav = () => {
       tokenCache={tokenCache}
     >
       <QueryClientProvider client={queryClient}>
-        <GestureHandlerRootView style={{ flex: 1 }}>
-          <StatusBar style="dark" />
-          <InitialLayout />
-        </GestureHandlerRootView>
+        <UserInActivityProvider>
+          <GestureHandlerRootView style={{ flex: 1 }}>
+            <StatusBar style="dark" />
+            <InitialLayout />
+          </GestureHandlerRootView>
+        </UserInActivityProvider>
       </QueryClientProvider>
     </ClerkProvider>
   );

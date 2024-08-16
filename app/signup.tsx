@@ -35,6 +35,7 @@ export default function signup() {
   };
   const [countryCode, setCountryCode] = useState("+1");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [firstName, setFirstName] = useState("");
 
   const keyboardVerticalOffset = Platform.OS === "ios" ? 90 : 0;
 
@@ -67,6 +68,19 @@ export default function signup() {
           />
         </View>
 
+        {/* <View style={defaultStyles.container}>
+          <Text style={defaultStyles.header}>
+            Enter Your First and Last name
+          </Text>
+          <TextInput
+            style={{ flex: 1 }}
+            placeholder="First Name"
+            keyboardType="default"
+            placeholderTextColor={Colors.gray}
+            value={firstName}
+            onChangeText={setFirstName}
+          />
+        </View> */}
         <Link href={"/login"} replace asChild>
           <TouchableOpacity>
             <Text style={[defaultStyles.textLink, { textAlign: "center" }]}>
