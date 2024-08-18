@@ -3,6 +3,7 @@
     "name": "vantage",
     "slug": "vantage",
     "version": "1.0.0",
+    "description": "The best platform to be involved with cryptocurrencies!",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
