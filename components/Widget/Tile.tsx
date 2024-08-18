@@ -27,7 +27,7 @@ interface TileProps {
 }
 
 const Tile = ({ id }: TileProps) => {
-  const { transactions } = useBalanceStore();
+  const { transactions, balance } = useBalanceStore();
 
   if (id === "spent") {
     return (
@@ -43,7 +43,7 @@ const Tile = ({ id }: TileProps) => {
             paddingTop: 10,
           }}
         >
-          1024$
+          {balance()} $
         </Text>
       </View>
     );

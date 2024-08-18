@@ -6,7 +6,7 @@ import { useFonts } from "expo-font";
 import { Link, Stack, useRouter, useSegments } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { TouchableOpacity, Text, Appearance } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -186,11 +186,35 @@ const InitialLayout = () => {
         name="authenticated/(modals)/lock"
         options={{ headerShown: false, animation: "none" }}
       />
+
+      <Stack.Screen
+        name="authenticated/(modals)/account"
+        options={{
+          presentation: "transparentModal",
+          animation: "fade",
+          title: "",
+          headerTransparent: true,
+          headerLeft: () => (
+            <TouchableOpacity onPress={router.back}>
+              <Ionicons name="close-outline" size={24} color={"#fff"} />
+            </TouchableOpacity>
+          ),
+        }}
+      />
     </Stack>
   );
 };
 
 const RootLayoutNav = () => {
+  const [colorScheme, setColorScheme] = useState(Appearance.getColorScheme());
+
+  useEffect(() => {
+    const subscription = Appearance.addChangeListener(({ colorScheme }) => {
+      setColorScheme(colorScheme);
+    });
+
+    return () => subscription.remove();
+  }, []);
   return (
     <ClerkProvider
       publishableKey={CLERK_PUBLISHABLE_KEY!}
@@ -199,7 +223,7 @@ const RootLayoutNav = () => {
       <QueryClientProvider client={queryClient}>
         <UserInActivityProvider>
           <GestureHandlerRootView style={{ flex: 1 }}>
-            <StatusBar style="dark" />
+            <StatusBar style={"dark"} />
             <InitialLayout />
           </GestureHandlerRootView>
         </UserInActivityProvider>

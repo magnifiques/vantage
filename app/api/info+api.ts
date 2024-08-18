@@ -1,20 +1,18 @@
 export async function GET(request: Request) {
-  // const url = new URL(request.url);
-  // const ids = url.searchParams.get("ids") || "";
-  // const response = await fetch(
-  //   `https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=${ids}`,
-  //   {
-  //     headers: {
-  //       "X-CMC_PRO_API_KEY": process.env.COINMARKETCAP_API_KEY!,
-  //     },
-  //   }
-  // );
+  const url = new URL(request.url);
+  const ids = url.searchParams.get("ids") || "";
+  const response = await fetch(
+    `https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=${ids}`,
+    {
+      headers: {
+        "X-CMC_PRO_API_KEY": process.env.EXPO_PUBLIC_COINMARKETCAP_API_KEY!,
+      },
+    }
+  );
 
-  // const results = await response.json();
-
-  // console.log(results);
-  // return Response.json(results.data);
-  return Response.json(data);
+  const results = await response.json();
+  return Response.json(results.data);
+  // return Response.json(data);
 }
 
 const data = {

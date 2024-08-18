@@ -292,22 +292,24 @@ const data = [
 ];
 
 export async function GET(request: Request) {
-  //   const url = new URL(request.url);
-  //   const limit = url.searchParams.get("limit") || 5;
+  const url = new URL(request.url);
+  const limit = url.searchParams.get("limit") || 10;
 
-  //   const response = await fetch(
-  //     `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=${limit}&convert=USD`,
-  //     {
-  //       headers: {
-  //         "X-CMC_PRO_API_KEY": process.env.COINMARKETCAP_API_KEY!,
-  //       },
-  //     }
-  //   );
+  const response = await fetch(
+    `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=${limit}&convert=USD`,
+    {
+      headers: {
+        "X-CMC_PRO_API_KEY": process.env.EXPO_PUBLIC_COINMARKETCAP_API_KEY!,
+      },
+    }
+  );
 
-  //   const res = await response.json();
-  //   return Response.json(res.data);
+  const res = await response.json();
 
-  return new Response(JSON.stringify(data), {
+  return new Response(JSON.stringify(res.data), {
     headers: { "Content-Type": "application/json" },
   });
+  // return new Response(JSON.stringify(data), {
+  //   headers: { "Content-Type": "application/json" },
+  // });
 }

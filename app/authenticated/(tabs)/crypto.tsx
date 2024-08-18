@@ -32,7 +32,7 @@ const crypto = () => {
       contentContainerStyle={{ paddingTop: headerHeight }}
     >
       <Text style={defaultStyles.sectionHeader}>Latest Crypto Currencies</Text>
-      <View style={defaultStyles.block}>
+      <View style={[defaultStyles.block, { marginBottom: 140, marginTop: 20 }]}>
         {currencies.data?.map((currency: Currency) => (
           //@ts-ignore
           <Link key={currency.id} href={`/crypto/${currency.id}`} asChild>

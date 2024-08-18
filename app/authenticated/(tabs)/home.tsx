@@ -22,6 +22,17 @@ const Home = () => {
     });
   };
 
+  const onPressRemove = () => {
+    runTransaction({
+      id: Math.random().toString(),
+      amount: -200,
+      date: new Date(),
+      title: "Withdrew Money",
+    });
+  };
+
+  const onPressNothing = () => {};
+
   return (
     <ScrollView
       style={{ backgroundColor: Colors.background }}
@@ -35,8 +46,8 @@ const Home = () => {
       </View>
       <View style={styles.actionRow}>
         <RoundButton title="Add Money" onPress={onAddMoney} icon={"add"} />
-        <RoundButton title="Exchange" onPress={onAddMoney} icon={"refresh"} />
-        <RoundButton title="Details" onPress={onAddMoney} icon={"list"} />
+        <RoundButton title="Withdraw" onPress={onPressRemove} icon={"remove"} />
+        <RoundButton title="Details" onPress={onPressNothing} icon={"list"} />
         <RoundButton
           title="More"
           onPress={onAddMoney}

@@ -44,7 +44,7 @@ export const UserInActivityProvider = ({ children }: any) => {
 
         if (elapsed > 200 && isSignedIn) {
           // Ensure isSignedIn is defined
-          console.log("working");
+
           router.replace("/authenticated/(modals)/lock");
         }
       } catch (error) {

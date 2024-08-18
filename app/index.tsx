@@ -3,6 +3,7 @@ import { defaultStyles } from "@/constants/Styles";
 import { useAssets } from "expo-asset";
 import { ResizeMode, Video } from "expo-av";
 import { Link } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
@@ -21,7 +22,7 @@ const Home = () => {
         />
       )}
       <View style={{ marginTop: 80, padding: 20 }}>
-        <Text style={styles.header}>Welcome TO the APP!</Text>
+        <Text style={styles.header}>Welcome TO the Vantage!</Text>
       </View>
 
       <View style={styles.buttons}>

@@ -23,7 +23,13 @@ import Animated, {
   SharedValue,
   useAnimatedProps,
 } from "react-native-reanimated";
+import { ActivityIndicator } from "react-native";
 
+const Loading = () => (
+  <View style={[styles.centered, { height: "100%" }]}>
+    <ActivityIndicator size="large" color={Colors.primary} />
+  </View>
+);
 Animated.addWhitelistedNativeProps({ text: true, defaultValue: true });
 
 const categories = ["Overview", "News", "Orders", "Transactions"];
@@ -47,7 +53,7 @@ const Page = () => {
     if (isActive) Haptics.selectionAsync();
   }, [isActive]);
 
-  const { data } = useQuery({
+  const { data, isLoading: isDataLoading } = useQuery({
     queryKey: ["info", id],
     queryFn: async () => {
       const info = await fetch(`/api/info?ids=${id}`).then((res) => res.json());
@@ -55,10 +61,12 @@ const Page = () => {
     },
   });
 
-  const { data: tickers } = useQuery({
-    queryKey: ["tickers"],
+  const crypto = `${data?.symbol}-${data?.name}`.toLowerCase();
+
+  const { data: tickers, isLoading: isTickersLoading } = useQuery({
+    queryKey: ["tickers", crypto],
     queryFn: async (): Promise<any[]> =>
-      await fetch(`/api/tickers`).then((res) => res.json()),
+      await fetch(`/api/tickers?crypto=${crypto}`).then((res) => res.json()),
   });
 
   const animatedText = useAnimatedProps(() => {
@@ -75,6 +83,10 @@ const Page = () => {
       defaultValue: "",
     };
   });
+
+  if (isDataLoading || isTickersLoading) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -179,8 +191,6 @@ const Page = () => {
         )}
         renderItem={({ item }) => (
           <>
-            {/* CHARTS */}
-
             <View style={[defaultStyles.block, { height: 500 }]}>
               {tickers && (
                 <>
@@ -258,13 +268,8 @@ const Page = () => {
               ]}
             >
               <Text style={styles.subtitle}>Overview</Text>
-              <Text style={{ color: Colors.gray }}>
-                Bitcoin is a decentralized digital currency, without a central
-                bank or single administrator, that can be sent from user to user
-                on the peer-to-peer bitcoin network without the need for
-                intermediaries. Transactions are verified by network nodes
-                through cryptography and recorded in a public distributed ledger
-                called a blockchain.
+              <Text style={{ color: Colors.gray, fontSize: 15 }}>
+                {data?.description}
               </Text>
             </View>
           </>
@@ -275,10 +280,15 @@ const Page = () => {
 };
 
 const styles = StyleSheet.create({
+  centered: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   subtitle: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: "bold",
-    marginBottom: 20,
+    marginBottom: 5,
     color: Colors.gray,
   },
   categoryText: {
@@ -299,7 +309,6 @@ const styles = StyleSheet.create({
   categoriesBtnActive: {
     padding: 10,
     paddingHorizontal: 14,
-
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#fff",
