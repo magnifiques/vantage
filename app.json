@@ -46,7 +46,7 @@
       [
         "expo-router",
         {
-          "origin": "https://u.expo.dev/8fb7f659-304f-4b48-ba94-77a0a1f20692"
+          "origin": "http://localhost:8000"
         }
       ],
       "expo-asset",
