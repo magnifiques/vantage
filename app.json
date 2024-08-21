@@ -25,7 +25,11 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.vapit.vantage"
+      "package": "com.vapit.vantage",
+      "permissions": [
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -42,7 +46,7 @@
       [
         "expo-router",
         {
-          "origin": "http://localhost:8081"
+          "origin": "https://u.expo.dev/8fb7f659-304f-4b48-ba94-77a0a1f20692"
         }
       ],
       "expo-asset",
@@ -55,17 +59,17 @@
     },
     "extra": {
       "router": {
-        "origin": false
+        "origin": "https://u.expo.dev/8fb7f659-304f-4b48-ba94-77a0a1f20692"
       },
       "eas": {
-        "projectId": "3dbb2d1b-84c3-4629-af1b-56e6c1d5f283"
+        "projectId": "8fb7f659-304f-4b48-ba94-77a0a1f20692"
       }
     },
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/3dbb2d1b-84c3-4629-af1b-56e6c1d5f283"
+      "url": "https://u.expo.dev/8fb7f659-304f-4b48-ba94-77a0a1f20692"
     }
   }
 }

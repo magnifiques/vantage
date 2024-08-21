@@ -8,7 +8,7 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 const Home = () => {
-  const [assets] = useAssets([require("@/assets/videos/intro.mp4")]);
+  const [assets] = useAssets([require("../assets/videos/intro.mp4")]);
   return (
     <View style={styles.container}>
       {assets && (
