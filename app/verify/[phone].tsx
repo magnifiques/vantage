@@ -76,7 +76,7 @@ const Page = () => {
     <View style={defaultStyles.container}>
       <Text style={defaultStyles.header}>6-digit code</Text>
       <Text style={defaultStyles.descriptionText}>
-        Code sent to {phone} unless you already have an account
+        Code has been sent to your registered phone number
       </Text>
 
       <CodeField

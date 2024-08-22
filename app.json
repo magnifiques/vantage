@@ -46,7 +46,7 @@
       [
         "expo-router",
         {
-          "origin": "http://localhost:8000"
+          "origin": "http://localhost:8081"
         }
       ],
       "expo-asset",
