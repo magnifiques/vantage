@@ -1,8 +1,13 @@
 # Vantage — The Best Platform to Dive into Cryptocurrencies! 🚀
 
 Vantage is a mobile application designed to make managing your cryptocurrency investments easy and secure. Built with Expo Go and React Native, Vantage offers a seamless experience with phone number authentication from Clerk.
+![video](https://github.com/user-attachments/assets/0cd15be5-2c13-4c8f-b055-06efeb5e71a3)
+
 
 ## 📲 Getting Started
+
+![IMG_2456](https://github.com/user-attachments/assets/ffb79989-637b-4709-ae4d-91ae3d100a4f)
+![IMG_2457](https://github.com/user-attachments/assets/927045f6-e452-4785-b570-7345af43584b)
 
 ### Authentication
 When you open the app, you’ll encounter the Authentication Page where you can:
@@ -10,6 +15,9 @@ When you open the app, you’ll encounter the Authentication Page where you can:
 - **Log In:** If you already have an account, enter your phone number and verify it with the 6-digit code sent to you via SMS.
 
 ## 🏠 Home Screen Overview
+
+![IMG_2450](https://github.com/user-attachments/assets/2d18ef53-40f6-455f-9f66-b8e9fc226634)
+![IMG_2454](https://github.com/user-attachments/assets/f8044855-5d52-46c2-937d-f5cd81580939)
 
 The Home screen is your central hub where you can:
 - **Add or Withdraw Funds:** Easily manage your money.
@@ -24,6 +32,10 @@ The Home screen is your central hub where you can:
 - **Transfers Tab:** Monitor all your transfers, whether sending or receiving.
 - **Crypto Tab:** Explore the top 20 trending cryptocurrencies. Tap on any coin to see an overview, a price-time graph, and additional tabs for news, orders, and transactions.
 - **Lifestyle Tab:** Stay informed with the latest cryptocurrency news and trends.
+
+![IMG_2451](https://github.com/user-attachments/assets/36bda148-a8e1-4e46-8e99-37ef66fb35ec)
+![IMG_2452](https://github.com/user-attachments/assets/74a7c2ad-971d-4455-9b79-e2bc637a7934)
+![IMG_2453](https://github.com/user-attachments/assets/7b14d39c-bfcf-4ecc-9dc5-1de597c02e27)
 
 ## ⚙️ Tech Stack
 
@@ -61,6 +73,8 @@ The Home screen is your central hub where you can:
 - **react-router:** Manages client-side routing.
 - **victory-native:** Data visualization for the price graph.
 - **zustand:** Lightweight state management.
+
+![IMG_2449](https://github.com/user-attachments/assets/ab2e03be-4abf-4982-a3c5-945e7aa9dea1)
 
 ## 🛠️ How to Access Vantage
 
