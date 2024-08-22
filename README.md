@@ -1,8 +1,8 @@
 # Vantage — The Best Platform to Dive into Cryptocurrencies! 🚀
 
 Vantage is a mobile application designed to make managing your cryptocurrency investments easy and secure. Built with Expo Go and React Native, Vantage offers a seamless experience with phone number authentication from Clerk.
-![video](https://github.com/user-attachments/assets/0cd15be5-2c13-4c8f-b055-06efeb5e71a3)
 
+![IMG_2455](https://github.com/user-attachments/assets/242ae2db-0314-4720-bc5e-851cf85b6db9)
 
 ## 📲 Getting Started
 
